@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+.cabecalho {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+.logo {
+  position: relative;
+  z-index: 999;
+  color: white;
+  margin: 30px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.menu {
+  background-color: rgb(246, 66, 66);
+  width: 350px;
+  height: 100vh;
+  display: none;
+}
+
+.close {
+  font-size: 30px;
+  color: white;
+  text-align: right;
+  padding: 20px;
+  width: 100%;
+}
+
+.menu-icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 30px;
+  font-size: 20px;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.menu-icon:hover {
+  background-color: rgba(0, 0, 0, 1);
+  transition-duration: 0.75s;
+}
+
+.menu-list {
+  padding: 0 50px;
+  
+}
+
+.menu-list li {
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.menu-list .home::after,
+.menu-list .generic::after {
+  content: '';
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 100%;
+  margin-top: 30px;
+}
+
+.intro {
+  background-image: url('../images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro::after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+.intro-tiluto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-size: 7.5em;
+  font-family: "Lobster", cursive;
+  color: white;
+  opacity: 0.80;
+  position: relative;
+  z-index: 1;
+}
