@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 ul {
@@ -14,6 +15,18 @@ a {
 
 a:visited {
   color: white;
+}
+
+.background {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 1000px;
 }
 
 .cabecalho {
@@ -89,21 +102,17 @@ a:visited {
 
 .intro {
   background-image: url('../images/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.intro::after {
+.background::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.40);
   height: 100vh;
   width: 100%;
   position: absolute;
+  z-index: 0;
 }
 
 .intro-tiluto {
@@ -116,5 +125,58 @@ a:visited {
   color: white;
   opacity: 0.80;
   position: relative;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.section-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-one {
+  background-image: url('../images/banner2.jpg');
+}
+
+.section-two {
+  background-image: url('../images/banner5.jpg');
+}
+
+.section-three {
+  background-image: url('../images/banner4.jpg');
+}
+
+.section-four {
+  background-image: url('../images/banner3.jpg');
+}
+
+.content-fundo {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 75px 50px;
+  color: white;
+  text-align: center;
+  position: relative;
   z-index: 1;
+}
+
+.content-titulo {
+  font-size: 35px;
+}
+
+.content-text {
+  font-size: 20px;
+  margin: 30px 0 40px 0;
+}
+
+.content-botao {
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
