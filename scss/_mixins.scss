@@ -1,0 +1,109 @@
+@mixin tela-tamanho {
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin tela-fundo {
+  @include tela-tamanho;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@mixin fundo-escuro {
+  @include tela-tamanho;
+  content: '';
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: 0;
+}
+
+@mixin posicao-centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin links {
+  text-decoration: none;
+  color: $cor-primaria-texto;
+}
+
+@mixin tipografia-padrao {
+  color: $cor-primaria-texto;
+  font-size: 1.25em;
+}
+
+@mixin conteudo {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 75px 50px;
+    color: $cor-primaria-texto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+@mixin titulo {
+  color: $cor-primaria-texto;;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+@mixin sub-titulo {
+  color: $cor-secundario-texto;
+  font-size: 1.25em;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+@mixin texto {
+  color: $cor-secundario-texto;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 25px;
+  margin-bottom: 50px;
+}
+
+@mixin botao {
+  @include links;
+  background-color: $cor-transparente;
+  border: $border-style;
+  border-radius: 5px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+}
+
+@mixin label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+@mixin campos {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: $border-style;
+  border-radius: 5px;
+  padding: 15px;
+  outline: 0;
+}
+
+@mixin placeholder-style {
+  font-size: 1em;
+  color: white;
+  opacity: 0.75;
+  letter-spacing: 1px;
+}
+
+@mixin redes-sociais {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: 25px 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: $cor-primaria-texto;
+  font-size: 2em;
+  text-align: center;
+  line-height: 70px;
+}
