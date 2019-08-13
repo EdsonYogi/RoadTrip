@@ -107,3 +107,20 @@
   text-align: center;
   line-height: 70px;
 }
+
+/*MIXINS HOVER*/
+
+@mixin botao-hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transition-duration: 0.75s;
+}
+
+@mixin menu-hover {
+  color: $cor-secundario-texto;
+  transition-duration: 0.40s;
+}
+
+@mixin redes-hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition-duration: 0.40s;
+}

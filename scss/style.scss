@@ -34,19 +34,33 @@ body {
   border: none;
   background: rgba(0, 0, 0, 0.5);
   @include tipografia-padrao;
+  cursor: pointer;
+  &:hover {
+    @include menu-hover;
+  }
 }
 
+
+
 .menu {
+  visibility: hidden;
   background-color: $cor-secundaria;
   width: 350px;
   height: 100vh;
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.5s ease, visibility 0.5s;
+  transform: translateX(350px);
   .close {
     margin: 25px;
     text-align: right;
     width: calc(100% - 50px);
     font-size: 2em;
     cursor: pointer;
+    &:hover {
+      @include menu-hover;
+    }
   }
   ul {
     margin: 25px;
@@ -55,9 +69,17 @@ body {
       a {
         @include links;
         @include tipografia-padrao;
+        &:hover {
+          @include menu-hover;
+        }
       }
     }
   }
+}
+
+.menu.menu-ativo {
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .intro,
@@ -69,7 +91,6 @@ body {
   @include posicao-centro;
 }
 
-.intro::before,
 .section-one::before,
 .section-two::before,
 .section-three::before,
@@ -85,7 +106,29 @@ body {
     font-family: "Lobster", cursive;
     position: relative;
     opacity: 0.90;
+    animation-name: tituloIntroAnimation;
+    animation-duration: 3s;
   }
+}
+
+@keyframes tituloIntroAnimation {
+  0%{opacity: 0;}
+  25%{opacity: 0;}
+  50%{opacity: 0.50;}
+  100%{opacity: 0.90;}
+}
+
+.intro::before {
+  @include fundo-escuro;
+  animation-name: backgroundAnimation;
+  animation-duration: 3s;
+}
+
+@keyframes backgroundAnimation {
+  0%   {background-color: rgba(0, 0, 0, 1);}
+  25%  {background-color: rgba(0, 0, 0, 1);}
+  50%  {background-color: rgba(0, 0, 0, 1);}
+  100% {background-color: rgba(0, 0, 0, 0.5);}
 }
 
 .container {
@@ -108,8 +151,9 @@ body {
   background-image: url('../images/banner3.jpg');
 }
 
-.content-fundo {
+.content {
   @include conteudo;
+  opacity: 0;
   .content-titulo {
     @include titulo;
   }
@@ -121,7 +165,21 @@ body {
   }
   .content-botao {
     @include botao;
+    &:hover {
+      @include botao-hover;
+    }
   }
+}
+
+.content.ativar-animacao {
+  animation-name: contentAnimation;
+  animation-duration: 2s;
+  opacity: 1;
+}
+
+@keyframes contentAnimation {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 .rodape {
@@ -150,9 +208,11 @@ body {
       width: calc(100% - 30px);
       height: 25px;
       margin-bottom: 20px;
+      &:focus {
+      outline: 2px solid white;
+      }
     }
   }
-
   .message {
     width: 100%;
     label {
@@ -163,10 +223,16 @@ body {
       width: calc(100% - 30px);
       margin-bottom: 20px;
       resize: none;
+      &:focus {
+        outline: 2px solid white;
+        }
     }
   }
   .botao {
     @include botao;
+    &:hover {
+      @include botao-hover;
+    }
   }
 }
 
@@ -178,10 +244,12 @@ body {
   text-align: center;
   i {
     @include redes-sociais;
+    &:hover {
+      @include redes-hover;
+    }
   }
 }
 
 .copyright {
   text-align: center;
 }
-

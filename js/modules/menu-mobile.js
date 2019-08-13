@@ -11,7 +11,6 @@ export default function initMenuMobile() {
   })
 
   function ativarMenuMobile() {
-    menuMobile.classList.add('menu-ativo')
     menu.classList.add('menu-ativo')
     initClickOutside(this, eventos, () => {
       menuMobile.classList.remove('menu-ativo')
@@ -21,6 +20,6 @@ export default function initMenuMobile() {
 
   function closeMenuMobile() {
     menuMobile.classList.remove('menu-ativo')
-      menu.classList.remove('menu-ativo')
+    menu.classList.remove('menu-ativo')
   }
 }
